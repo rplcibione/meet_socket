@@ -1,0 +1,41 @@
+Arguments: 
+  c:\program files\nodejs\node.exe C:\Users\exain\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add socket.io express cors body-parser moment --offline
+
+PATH: 
+  c:\programdata\oracle\java\javapath;c:\windows\system32;c:\windows;c:\windows\system32\wbem;c:\windows\system32\windowspowershell\v1.0\;c:\windows\system32\openssh\;c:\program files\microsoft vs code\bin;c:\users\exain\.dnx\bin;c:\program files\microsoft dnx\dnvm\;c:\program files\git\cmd;d:\xampp72\php;c:\programdata\composersetup\bin;c:\windows\system32;c:\windows;c:\windows\system32\wbem;c:\windows\system32\windowspowershell\v1.0\;c:\windows\system32\openssh\;c:\program files (x86)\microsoft sql server\110\tools\binn\;c:\program files\microsoft sql server\110\tools\binn\;c:\program files\microsoft sql server\110\dts\binn\;c:\program files (x86)\microsoft sql server\110\tools\binn\managementstudio\;c:\program files (x86)\microsoft visual studio 10.0\common7\ide\privateassemblies\;c:\program files (x86)\microsoft sql server\110\dts\binn\;c:\program files (x86)\windows kits\8.1\windows performance toolkit\;c:\program files\nodejs\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Users\exain\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\exain\AppData\Local\Programs\Python\Python37-32\;C:\Users\exain\AppData\Local\Microsoft\WindowsApps;C:\Users\exain\AppData\Roaming\Composer\vendor\bin;D:\Dev Programs\flutter\flutter;D:\Dev Programs\Dart\Dart\dart-sdk;D:\Android\sdk;D:\Android\sdk\emulator;D:\Program Files\heroku\bin;D:\xampp72\mysql\bin;D:\Dev Programs\flutter\bin;C:\Program Files\Java\jdk1.8.0_101\bin;D:\Android\sdk\platform-tools;C:\Users\exain\AppData\Roaming\npm;D:\Python27;
+
+Yarn version: 
+  1.12.3
+
+Node version: 
+  10.19.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Invariant Violation: There should only be one folder in a package cache (got )
+      at invariant (C:\Users\exain\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:2308:15)
+      at C:\Users\exain\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:59318:7
+      at Generator.next (<anonymous>)
+      at step (C:\Users\exain\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:304:30)
+      at C:\Users\exain\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:315:13
+
+npm manifest: 
+  {
+    "name": "socketio",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
