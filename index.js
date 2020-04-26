@@ -13,8 +13,9 @@ io.on("connect", (socket) => {
   console.log("Socket ", socket.id, " Connected");
   socket.on("test", (_) => console.log("Test from " + socket.id));
   socket.on("join", (room) => {
-    socket.join(room);
-    socket.registeredRooms.push(room);
+    socket.join("room" + room);
+    if (socket.registeredRooms.indexOf("room" + room) == -1)
+      socket.registeredRooms.push("room" + room);
   });
   socket.on("update_location", (data) => {
     console.log("Location update coming form " + data);
@@ -22,6 +23,10 @@ io.on("connect", (socket) => {
       console.log("Broadcasting to room " + room);
       io.to(room).emit("location_updates", data);
     });
+  });
+  socket.on("send_message", (data) => {
+    const { roomId, chatInfo } = data;
+    io.to("room" + roomId).emit("chat", chatInfo);
   });
 });
 
