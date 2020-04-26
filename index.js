@@ -14,9 +14,9 @@ io.on("connect", (socket) => {
   socket.on("test", (_) => console.log("Test from " + socket.id));
   socket.on("join", (room) => {
     console.log("Socket Joining Room " + room);
-    socket.join("room" + room);
-    if (socket.registeredRooms.indexOf("room" + room) == -1)
-      socket.registeredRooms.push("room" + room);
+    socket.join(room);
+    if (socket.registeredRooms.indexOf(room) == -1)
+      socket.registeredRooms.push(room);
   });
   socket.on("update_location", (data) => {
     console.log("Location update coming form " + data);
@@ -30,7 +30,8 @@ io.on("connect", (socket) => {
     const { roomId, chatInfo } = data;
     console.log(roomId);
     console.log(chatInfo);
-    io.to("room" + roomId).emit("chat", chatInfo);
+    console.log("Sending to room" + roomId);
+    io.to(roomId).emit("chat", chatInfo);
   });
 });
 
