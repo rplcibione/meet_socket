@@ -26,7 +26,10 @@ io.on("connect", (socket) => {
     });
   });
   socket.on("send_message", (data) => {
-    const { roomId, chatInfo } = JSON.parse(data);
+    console.log(data);
+    const { roomId, chatInfo } = data;
+    console.log(roomId);
+    console.log(chatInfo);
     io.to("room" + roomId).emit("chat", chatInfo);
   });
 });
