@@ -25,7 +25,7 @@ io.on("connect", (socket) => {
     });
   });
   socket.on("send_message", (data) => {
-    const { roomId, chatInfo } = data;
+    const { roomId, chatInfo } = JSON.parse(data);
     io.to("room" + roomId).emit("chat", chatInfo);
   });
 });
