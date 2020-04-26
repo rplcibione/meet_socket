@@ -27,6 +27,7 @@ io.on("connect", (socket) => {
   });
   socket.on("send_message", (data) => {
     console.log(data);
+    if (typeof data == "string") data = JSON.parse(data);
     const { roomId, chatInfo } = data;
     console.log(roomId);
     console.log(chatInfo);
