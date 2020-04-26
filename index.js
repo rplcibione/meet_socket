@@ -13,6 +13,7 @@ io.on("connect", (socket) => {
   console.log("Socket ", socket.id, " Connected");
   socket.on("test", (_) => console.log("Test from " + socket.id));
   socket.on("join", (room) => {
+    console.log("Socket Joining Room " + room);
     socket.join("room" + room);
     if (socket.registeredRooms.indexOf("room" + room) == -1)
       socket.registeredRooms.push("room" + room);
