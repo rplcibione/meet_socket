@@ -45,7 +45,6 @@ io.on("connect", (socket) => {
     try {
       if (typeof data == "string") data = JSON.parse(data);
       const { chatInfo } = data;
-      console.log(roomId);
       console.log(chatInfo);
       console.log("Sending to room" + roomId);
       socket.broadcast.emit("chat", chatInfo);
