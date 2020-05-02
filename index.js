@@ -48,7 +48,7 @@ io.on("connect", (socket) => {
       console.log(roomId);
       console.log(chatInfo);
       console.log("Sending to room" + roomId);
-      io.emit("chat", chatInfo);
+      io.sockets.emit("chat", chatInfo);
 
       socket.emit("sys_notif", `Message broadcasted`);
     } catch (error) {
