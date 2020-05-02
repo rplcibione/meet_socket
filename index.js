@@ -40,6 +40,19 @@ io.on("connect", (socket) => {
       console.log(error);
     }
   });
+  socket.on("send_message_broadcast", (data) => {
+    console.log(data);
+    try {
+      if (typeof data == "string") data = JSON.parse(data);
+      const { chatInfo } = data;
+      console.log(roomId);
+      console.log(chatInfo);
+      console.log("Sending to room" + roomId);
+      io.emit("chat", chatInfo);
+    } catch (error) {
+      console.log(error);
+    }
+  });
 });
 
 server.listen(process.env.PORT || 80, (_) => {
