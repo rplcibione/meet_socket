@@ -17,6 +17,8 @@ io.on("connect", (socket) => {
     socket.join(room);
     if (socket.registeredRooms.indexOf(room) == -1)
       socket.registeredRooms.push(room);
+
+    socket.emit("sys_notif", `You are joining room ${room}`);
   });
   socket.on("update_location", (data) => {
     console.log("Location update coming form " + data);
@@ -27,12 +29,16 @@ io.on("connect", (socket) => {
   });
   socket.on("send_message", (data) => {
     console.log(data);
-    if (typeof data == "string") data = JSON.parse(data);
-    const { roomId, chatInfo } = data;
-    console.log(roomId);
-    console.log(chatInfo);
-    console.log("Sending to room" + roomId);
-    io.to(roomId).emit("chat", chatInfo);
+    try {
+      if (typeof data == "string") data = JSON.parse(data);
+      const { roomId, chatInfo } = data;
+      console.log(roomId);
+      console.log(chatInfo);
+      console.log("Sending to room" + roomId);
+      io.to(roomId).emit("chat", chatInfo);
+    } catch (error) {
+      console.log(error);
+    }
   });
 });
 
